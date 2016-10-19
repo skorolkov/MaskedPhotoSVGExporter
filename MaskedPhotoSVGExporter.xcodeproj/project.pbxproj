@@ -16,6 +16,8 @@
 		F255B2661DB79E1C0056ED34 /* StartController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F255B2641DB79E1C0056ED34 /* StartController.xib */; };
 		F255B26B1DB7BC6D0056ED34 /* MaskPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B2691DB7BC6D0056ED34 /* MaskPhotoController.m */; };
 		F255B26C1DB7BC6D0056ED34 /* MaskPhotoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F255B26A1DB7BC6D0056ED34 /* MaskPhotoController.xib */; };
+		F255B2711DB7D1730056ED34 /* MaskOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B2701DB7D1730056ED34 /* MaskOverlayView.m */; };
+		F255B2761DB7D25E0056ED34 /* CircularCroppingMask.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B2751DB7D25E0056ED34 /* CircularCroppingMask.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,11 @@
 		F255B2681DB7BC6D0056ED34 /* MaskPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskPhotoController.h; sourceTree = "<group>"; };
 		F255B2691DB7BC6D0056ED34 /* MaskPhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaskPhotoController.m; sourceTree = "<group>"; };
 		F255B26A1DB7BC6D0056ED34 /* MaskPhotoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MaskPhotoController.xib; sourceTree = "<group>"; };
+		F255B26F1DB7D1730056ED34 /* MaskOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskOverlayView.h; sourceTree = "<group>"; };
+		F255B2701DB7D1730056ED34 /* MaskOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaskOverlayView.m; sourceTree = "<group>"; };
+		F255B2731DB7D1B90056ED34 /* CroppingMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CroppingMask.h; sourceTree = "<group>"; };
+		F255B2741DB7D25E0056ED34 /* CircularCroppingMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularCroppingMask.h; sourceTree = "<group>"; };
+		F255B2751DB7D25E0056ED34 /* CircularCroppingMask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularCroppingMask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +134,7 @@
 		F255B25F1DB795900056ED34 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F255B2721DB7D1820056ED34 /* CroppingMask */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -152,11 +160,47 @@
 		F255B2671DB7BC520056ED34 /* MaskPhotoController */ = {
 			isa = PBXGroup;
 			children = (
+				F255B26D1DB7D1360056ED34 /* Views */,
 				F255B2681DB7BC6D0056ED34 /* MaskPhotoController.h */,
 				F255B2691DB7BC6D0056ED34 /* MaskPhotoController.m */,
 				F255B26A1DB7BC6D0056ED34 /* MaskPhotoController.xib */,
 			);
 			name = MaskPhotoController;
+			sourceTree = "<group>";
+		};
+		F255B26D1DB7D1360056ED34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F255B26E1DB7D15B0056ED34 /* MaskOverlayView */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F255B26E1DB7D15B0056ED34 /* MaskOverlayView */ = {
+			isa = PBXGroup;
+			children = (
+				F255B26F1DB7D1730056ED34 /* MaskOverlayView.h */,
+				F255B2701DB7D1730056ED34 /* MaskOverlayView.m */,
+			);
+			name = MaskOverlayView;
+			sourceTree = "<group>";
+		};
+		F255B2721DB7D1820056ED34 /* CroppingMask */ = {
+			isa = PBXGroup;
+			children = (
+				F255B2771DB7D2640056ED34 /* Circular */,
+				F255B2731DB7D1B90056ED34 /* CroppingMask.h */,
+			);
+			name = CroppingMask;
+			sourceTree = "<group>";
+		};
+		F255B2771DB7D2640056ED34 /* Circular */ = {
+			isa = PBXGroup;
+			children = (
+				F255B2741DB7D25E0056ED34 /* CircularCroppingMask.h */,
+				F255B2751DB7D25E0056ED34 /* CircularCroppingMask.m */,
+			);
+			name = Circular;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +308,8 @@
 				F255B2651DB79E1C0056ED34 /* StartController.m in Sources */,
 				F255B26B1DB7BC6D0056ED34 /* MaskPhotoController.m in Sources */,
 				F255B23B1DB794720056ED34 /* main.m in Sources */,
+				F255B2761DB7D25E0056ED34 /* CircularCroppingMask.m in Sources */,
+				F255B2711DB7D1730056ED34 /* MaskOverlayView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
