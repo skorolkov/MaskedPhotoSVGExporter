@@ -8,7 +8,7 @@
 
 #import "StartController.h"
 
-@interface StartController ()
+@interface StartController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
 
@@ -16,22 +16,85 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.title = NSLocalizedString(@"Get Started", @"start screen");
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    UIImage *pickedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-*/
+
+#pragma mark Actions
+
+- (IBAction)pickPhotoTap {
+    UIAlertController *sourceActionSheet = [self makePhotoSourceActionSheet];
+    [self presentViewController:sourceActionSheet animated:YES completion:nil];
+}
+
+#pragma mark Pick Image Support
+
+- (UIAlertController *)makePhotoSourceActionSheet {
+    NSString *title = NSLocalizedString(@"Choose source", @"start screen");
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:title
+                                                                         message:nil
+                                                                  preferredStyle:UIAlertControllerStyleActionSheet];
+    NSArray *sourceTypes = @[
+                             @(UIImagePickerControllerSourceTypeCamera),
+                             @(UIImagePickerControllerSourceTypePhotoLibrary),
+                             @(UIImagePickerControllerSourceTypeSavedPhotosAlbum)
+                             ];
+    for (NSNumber *sourceTypeNumber in sourceTypes) {
+        UIImagePickerControllerSourceType sourceType = [sourceTypeNumber integerValue];
+        if (![UIImagePickerController isSourceTypeAvailable:sourceType]) {
+            continue;
+        }
+        
+        __weak typeof(self) wSelf = self;
+        void (^tapHandler)(UIAlertAction *) = ^(UIAlertAction *action) {
+            UIImagePickerController *picker = [wSelf makeImagePickerControllerWithSourceType:sourceType];
+            [wSelf presentViewController:picker animated:YES completion:nil];
+        };
+        UIAlertAction *action = [UIAlertAction actionWithTitle:[self titleForImagePickerSourceType:sourceType]
+                                                         style:UIAlertActionStyleDefault
+                                                       handler:tapHandler];
+        [actionSheet addAction:action];
+    }
+    
+    NSString *cancelTitle = NSLocalizedString(@"Cancel", @"start screen");
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelTitle
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+    [actionSheet addAction:cancelAction];
+    
+    return actionSheet;
+}
+
+- (UIImagePickerController *)makeImagePickerControllerWithSourceType:(UIImagePickerControllerSourceType)sourceType {
+    UIImagePickerController *picker = [UIImagePickerController new];
+    picker.sourceType = sourceType;
+    picker.delegate = self;
+    return picker;
+}
+
+- (NSString *)titleForImagePickerSourceType:(UIImagePickerControllerSourceType)sourceType {
+    NSString *result = @"";
+    
+    if (sourceType == UIImagePickerControllerSourceTypeCamera) {
+        result = NSLocalizedString(@"Camera", @"start screen");
+    } else if (sourceType == UIImagePickerControllerSourceTypePhotoLibrary) {
+        result = NSLocalizedString(@"Photo Library", @"start screen");
+    } else if (sourceType == UIImagePickerControllerSourceTypeSavedPhotosAlbum) {
+        result = NSLocalizedString(@"Saved Photos", @"start screen");
+    }
+    
+    return result;
+}
 
 @end
