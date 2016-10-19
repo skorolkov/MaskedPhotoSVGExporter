@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F255B23B1DB794720056ED34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B23A1DB794720056ED34 /* main.m */; };
+		F255B23E1DB794720056ED34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B23D1DB794720056ED34 /* AppDelegate.m */; };
+		F255B2411DB794720056ED34 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B2401DB794720056ED34 /* ViewController.m */; };
+		F255B2441DB794720056ED34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F255B2421DB794720056ED34 /* Main.storyboard */; };
+		F255B2461DB794720056ED34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F255B2451DB794720056ED34 /* Assets.xcassets */; };
+		F255B2491DB794720056ED34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F255B2471DB794720056ED34 /* LaunchScreen.storyboard */; };
+		F255B2541DB794720056ED34 /* MaskedPhotoSVGExporterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B2531DB794720056ED34 /* MaskedPhotoSVGExporterTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F255B2501DB794720056ED34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F255B22E1DB794720056ED34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F255B2351DB794720056ED34;
+			remoteInfo = MaskedPhotoSVGExporter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F255B2361DB794720056ED34 /* MaskedPhotoSVGExporter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaskedPhotoSVGExporter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F255B23A1DB794720056ED34 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F255B23C1DB794720056ED34 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F255B23D1DB794720056ED34 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F255B23F1DB794720056ED34 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F255B2401DB794720056ED34 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F255B2431DB794720056ED34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F255B2451DB794720056ED34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F255B2481DB794720056ED34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F255B24A1DB794720056ED34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F255B24F1DB794720056ED34 /* MaskedPhotoSVGExporterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaskedPhotoSVGExporterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F255B2531DB794720056ED34 /* MaskedPhotoSVGExporterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskedPhotoSVGExporterTests.m; sourceTree = "<group>"; };
+		F255B2551DB794720056ED34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F255B2331DB794720056ED34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F255B24C1DB794720056ED34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F255B22D1DB794720056ED34 = {
+			isa = PBXGroup;
+			children = (
+				F255B2381DB794720056ED34 /* MaskedPhotoSVGExporter */,
+				F255B2521DB794720056ED34 /* MaskedPhotoSVGExporterTests */,
+				F255B2371DB794720056ED34 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F255B2371DB794720056ED34 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F255B2361DB794720056ED34 /* MaskedPhotoSVGExporter.app */,
+				F255B24F1DB794720056ED34 /* MaskedPhotoSVGExporterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F255B2381DB794720056ED34 /* MaskedPhotoSVGExporter */ = {
+			isa = PBXGroup;
+			children = (
+				F255B23C1DB794720056ED34 /* AppDelegate.h */,
+				F255B23D1DB794720056ED34 /* AppDelegate.m */,
+				F255B23F1DB794720056ED34 /* ViewController.h */,
+				F255B2401DB794720056ED34 /* ViewController.m */,
+				F255B2421DB794720056ED34 /* Main.storyboard */,
+				F255B2451DB794720056ED34 /* Assets.xcassets */,
+				F255B2471DB794720056ED34 /* LaunchScreen.storyboard */,
+				F255B24A1DB794720056ED34 /* Info.plist */,
+				F255B2391DB794720056ED34 /* Supporting Files */,
+			);
+			path = MaskedPhotoSVGExporter;
+			sourceTree = "<group>";
+		};
+		F255B2391DB794720056ED34 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F255B23A1DB794720056ED34 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F255B2521DB794720056ED34 /* MaskedPhotoSVGExporterTests */ = {
+			isa = PBXGroup;
+			children = (
+				F255B2531DB794720056ED34 /* MaskedPhotoSVGExporterTests.m */,
+				F255B2551DB794720056ED34 /* Info.plist */,
+			);
+			path = MaskedPhotoSVGExporterTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F255B2351DB794720056ED34 /* MaskedPhotoSVGExporter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F255B2581DB794720056ED34 /* Build configuration list for PBXNativeTarget "MaskedPhotoSVGExporter" */;
+			buildPhases = (
+				F255B2321DB794720056ED34 /* Sources */,
+				F255B2331DB794720056ED34 /* Frameworks */,
+				F255B2341DB794720056ED34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MaskedPhotoSVGExporter;
+			productName = MaskedPhotoSVGExporter;
+			productReference = F255B2361DB794720056ED34 /* MaskedPhotoSVGExporter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F255B24E1DB794720056ED34 /* MaskedPhotoSVGExporterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F255B25B1DB794720056ED34 /* Build configuration list for PBXNativeTarget "MaskedPhotoSVGExporterTests" */;
+			buildPhases = (
+				F255B24B1DB794720056ED34 /* Sources */,
+				F255B24C1DB794720056ED34 /* Frameworks */,
+				F255B24D1DB794720056ED34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F255B2511DB794720056ED34 /* PBXTargetDependency */,
+			);
+			name = MaskedPhotoSVGExporterTests;
+			productName = MaskedPhotoSVGExporterTests;
+			productReference = F255B24F1DB794720056ED34 /* MaskedPhotoSVGExporterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F255B22E1DB794720056ED34 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = polecat;
+				TargetAttributes = {
+					F255B2351DB794720056ED34 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					F255B24E1DB794720056ED34 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = F255B2351DB794720056ED34;
+					};
+				};
+			};
+			buildConfigurationList = F255B2311DB794720056ED34 /* Build configuration list for PBXProject "MaskedPhotoSVGExporter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F255B22D1DB794720056ED34;
+			productRefGroup = F255B2371DB794720056ED34 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F255B2351DB794720056ED34 /* MaskedPhotoSVGExporter */,
+				F255B24E1DB794720056ED34 /* MaskedPhotoSVGExporterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F255B2341DB794720056ED34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F255B2491DB794720056ED34 /* LaunchScreen.storyboard in Resources */,
+				F255B2461DB794720056ED34 /* Assets.xcassets in Resources */,
+				F255B2441DB794720056ED34 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F255B24D1DB794720056ED34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F255B2321DB794720056ED34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F255B2411DB794720056ED34 /* ViewController.m in Sources */,
+				F255B23E1DB794720056ED34 /* AppDelegate.m in Sources */,
+				F255B23B1DB794720056ED34 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F255B24B1DB794720056ED34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F255B2541DB794720056ED34 /* MaskedPhotoSVGExporterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F255B2511DB794720056ED34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F255B2351DB794720056ED34 /* MaskedPhotoSVGExporter */;
+			targetProxy = F255B2501DB794720056ED34 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F255B2421DB794720056ED34 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F255B2431DB794720056ED34 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F255B2471DB794720056ED34 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F255B2481DB794720056ED34 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F255B2561DB794720056ED34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F255B2571DB794720056ED34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F255B2591DB794720056ED34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MaskedPhotoSVGExporter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.polecat.MaskedPhotoSVGExporter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F255B25A1DB794720056ED34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MaskedPhotoSVGExporter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.polecat.MaskedPhotoSVGExporter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F255B25C1DB794720056ED34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MaskedPhotoSVGExporterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.polecat.MaskedPhotoSVGExporterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MaskedPhotoSVGExporter.app/MaskedPhotoSVGExporter";
+			};
+			name = Debug;
+		};
+		F255B25D1DB794720056ED34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MaskedPhotoSVGExporterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.polecat.MaskedPhotoSVGExporterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MaskedPhotoSVGExporter.app/MaskedPhotoSVGExporter";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F255B2311DB794720056ED34 /* Build configuration list for PBXProject "MaskedPhotoSVGExporter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F255B2561DB794720056ED34 /* Debug */,
+				F255B2571DB794720056ED34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F255B2581DB794720056ED34 /* Build configuration list for PBXNativeTarget "MaskedPhotoSVGExporter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F255B2591DB794720056ED34 /* Debug */,
+				F255B25A1DB794720056ED34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F255B25B1DB794720056ED34 /* Build configuration list for PBXNativeTarget "MaskedPhotoSVGExporterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F255B25C1DB794720056ED34 /* Debug */,
+				F255B25D1DB794720056ED34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F255B22E1DB794720056ED34 /* Project object */;
+}
