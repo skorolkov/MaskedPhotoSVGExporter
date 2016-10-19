@@ -7,6 +7,8 @@
 //
 
 #import "MaskPhotoController.h"
+#import "MaskOverlayView.h"
+#import "CircularCroppingMask.h"
 
 @interface MaskPhotoController () <UIScrollViewDelegate>
 
@@ -14,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet MaskOverlayView *maskOverlayView;
 
 @end
 
@@ -30,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupImageInScrollView];
+    [self setupMaskOverlay];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -45,6 +49,17 @@
     if (self.scrollView.minimumZoomScale != minimumZoomScale) {
         self.scrollView.minimumZoomScale = minimumZoomScale;
         self.scrollView.zoomScale = minimumZoomScale;
+        [self centerImageInScrollView];
+    }
+    
+    CGRect croppingRect = [self.maskOverlayView.croppingMask croppingPathRectForRect:self.view.bounds];
+    UIEdgeInsets scrollViewInsets = UIEdgeInsetsZero;
+    scrollViewInsets.top = croppingRect.origin.y;
+    scrollViewInsets.left = croppingRect.origin.x;
+    scrollViewInsets.right = self.view.bounds.size.width - CGRectGetMaxX(croppingRect);
+    scrollViewInsets.bottom = self.view.bounds.size.height - CGRectGetMaxY(croppingRect);
+    if (!UIEdgeInsetsEqualToEdgeInsets(self.scrollView.contentInset, scrollViewInsets)) {
+        self.scrollView.contentInset = scrollViewInsets;
     }
 }
 
@@ -59,6 +74,17 @@
 - (void)setupImageInScrollView {
     self.imageView.image = self.image;
     self.scrollView.maximumZoomScale = 1;
+}
+
+- (void)setupMaskOverlay {
+    self.maskOverlayView.croppingMask = [CircularCroppingMask new];
+}
+
+- (void)centerImageInScrollView {
+    CGPoint offset = CGPointZero;
+    offset.x = (self.scrollView.contentSize.width - self.scrollView.bounds.size.width) / 2;
+    offset.y = (self.scrollView.contentSize.height - self.scrollView.bounds.size.height) / 2;
+    [self.scrollView setContentOffset:offset];
 }
 
 @end

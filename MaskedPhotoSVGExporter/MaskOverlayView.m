@@ -55,6 +55,8 @@
 
 - (void)setupView {
     self.opaque = NO;
+    self.backgroundColor = [UIColor clearColor];
+    self.contentMode = UIViewContentModeRedraw;
 }
 
 #pragma mark Touch Handling
