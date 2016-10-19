@@ -22,6 +22,7 @@
     
     StartController *startVC = [StartController new];
     UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:startVC];
+    navigationVC.navigationBar.translucent = NO;
     
     self.window.rootViewController = navigationVC;
     
