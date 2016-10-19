@@ -7,6 +7,7 @@
 //
 
 #import "StartController.h"
+#import "MaskPhotoController.h"
 
 @interface StartController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -24,7 +25,13 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     UIImage *pickedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    __weak typeof(self) wSelf = self;
+    void (^showMaskImageController)() = ^ {
+        MaskPhotoController *maskVC = [[MaskPhotoController alloc] initWithImage:pickedImage];
+        [wSelf.navigationController pushViewController:maskVC animated:YES];
+    };
+    
+    [self dismissViewControllerAnimated:YES completion:showMaskImageController];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
