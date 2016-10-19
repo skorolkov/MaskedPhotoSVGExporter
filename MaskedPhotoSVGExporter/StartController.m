@@ -8,7 +8,7 @@
 
 #import "StartController.h"
 
-@interface StartController ()
+@interface StartController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
 
@@ -19,6 +19,17 @@
     self.title = NSLocalizedString(@"Get Started", @"start screen");
 }
 
+#pragma mark UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    UIImage *pickedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 #pragma mark Actions
 
@@ -27,7 +38,7 @@
     [self presentViewController:sourceActionSheet animated:YES completion:nil];
 }
 
-#pragma mark Supporting Methods
+#pragma mark Pick Image Support
 
 - (UIAlertController *)makePhotoSourceActionSheet {
     NSString *title = NSLocalizedString(@"Choose source", @"start screen");
@@ -68,6 +79,7 @@
 - (UIImagePickerController *)makeImagePickerControllerWithSourceType:(UIImagePickerControllerSourceType)sourceType {
     UIImagePickerController *picker = [UIImagePickerController new];
     picker.sourceType = sourceType;
+    picker.delegate = self;
     return picker;
 }
 
