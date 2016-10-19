@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  StartController.h
 //  MaskedPhotoSVGExporter
 //
 //  Created by Sergey Korolkov on 19.10.16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface StartController : UIViewController
 
 @end
-

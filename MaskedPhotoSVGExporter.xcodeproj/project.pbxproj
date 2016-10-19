@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		F255B23B1DB794720056ED34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B23A1DB794720056ED34 /* main.m */; };
 		F255B23E1DB794720056ED34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B23D1DB794720056ED34 /* AppDelegate.m */; };
-		F255B2411DB794720056ED34 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B2401DB794720056ED34 /* ViewController.m */; };
-		F255B2441DB794720056ED34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F255B2421DB794720056ED34 /* Main.storyboard */; };
 		F255B2461DB794720056ED34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F255B2451DB794720056ED34 /* Assets.xcassets */; };
 		F255B2491DB794720056ED34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F255B2471DB794720056ED34 /* LaunchScreen.storyboard */; };
 		F255B2541DB794720056ED34 /* MaskedPhotoSVGExporterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B2531DB794720056ED34 /* MaskedPhotoSVGExporterTests.m */; };
+		F255B2651DB79E1C0056ED34 /* StartController.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B2631DB79E1C0056ED34 /* StartController.m */; };
+		F255B2661DB79E1C0056ED34 /* StartController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F255B2641DB79E1C0056ED34 /* StartController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,15 +31,15 @@
 		F255B23A1DB794720056ED34 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F255B23C1DB794720056ED34 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F255B23D1DB794720056ED34 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F255B23F1DB794720056ED34 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F255B2401DB794720056ED34 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F255B2431DB794720056ED34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F255B2451DB794720056ED34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F255B2481DB794720056ED34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F255B24A1DB794720056ED34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F255B24F1DB794720056ED34 /* MaskedPhotoSVGExporterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaskedPhotoSVGExporterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F255B2531DB794720056ED34 /* MaskedPhotoSVGExporterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskedPhotoSVGExporterTests.m; sourceTree = "<group>"; };
 		F255B2551DB794720056ED34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F255B2621DB79E1C0056ED34 /* StartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartController.h; sourceTree = "<group>"; };
+		F255B2631DB79E1C0056ED34 /* StartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartController.m; sourceTree = "<group>"; };
+		F255B2641DB79E1C0056ED34 /* StartController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +83,9 @@
 			children = (
 				F255B23C1DB794720056ED34 /* AppDelegate.h */,
 				F255B23D1DB794720056ED34 /* AppDelegate.m */,
-				F255B23F1DB794720056ED34 /* ViewController.h */,
-				F255B2401DB794720056ED34 /* ViewController.m */,
-				F255B2421DB794720056ED34 /* Main.storyboard */,
-				F255B2451DB794720056ED34 /* Assets.xcassets */,
-				F255B2471DB794720056ED34 /* LaunchScreen.storyboard */,
-				F255B24A1DB794720056ED34 /* Info.plist */,
+				F255B25F1DB795900056ED34 /* Classes */,
+				F255B25E1DB795890056ED34 /* Controllers */,
+				F255B2601DB795AD0056ED34 /* Resources */,
 				F255B2391DB794720056ED34 /* Supporting Files */,
 			);
 			path = MaskedPhotoSVGExporter;
@@ -97,6 +94,8 @@
 		F255B2391DB794720056ED34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F255B2471DB794720056ED34 /* LaunchScreen.storyboard */,
+				F255B24A1DB794720056ED34 /* Info.plist */,
 				F255B23A1DB794720056ED34 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -109,6 +108,39 @@
 				F255B2551DB794720056ED34 /* Info.plist */,
 			);
 			path = MaskedPhotoSVGExporterTests;
+			sourceTree = "<group>";
+		};
+		F255B25E1DB795890056ED34 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F255B2611DB79DF30056ED34 /* StartController */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		F255B25F1DB795900056ED34 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		F255B2601DB795AD0056ED34 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F255B2451DB794720056ED34 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F255B2611DB79DF30056ED34 /* StartController */ = {
+			isa = PBXGroup;
+			children = (
+				F255B2621DB79E1C0056ED34 /* StartController.h */,
+				F255B2631DB79E1C0056ED34 /* StartController.m */,
+				F255B2641DB79E1C0056ED34 /* StartController.xib */,
+			);
+			name = StartController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +225,7 @@
 			files = (
 				F255B2491DB794720056ED34 /* LaunchScreen.storyboard in Resources */,
 				F255B2461DB794720056ED34 /* Assets.xcassets in Resources */,
-				F255B2441DB794720056ED34 /* Main.storyboard in Resources */,
+				F255B2661DB79E1C0056ED34 /* StartController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,8 +243,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F255B2411DB794720056ED34 /* ViewController.m in Sources */,
 				F255B23E1DB794720056ED34 /* AppDelegate.m in Sources */,
+				F255B2651DB79E1C0056ED34 /* StartController.m in Sources */,
 				F255B23B1DB794720056ED34 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,14 +268,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F255B2421DB794720056ED34 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F255B2431DB794720056ED34 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F255B2471DB794720056ED34 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -342,6 +366,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MaskedPhotoSVGExporter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.polecat.MaskedPhotoSVGExporter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,6 +378,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MaskedPhotoSVGExporter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.polecat.MaskedPhotoSVGExporter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
