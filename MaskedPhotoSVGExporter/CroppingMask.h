@@ -16,4 +16,6 @@
 - (UIBezierPath *)croppingPathForRect:(CGRect)rect;
 - (CGRect)croppingPathRectForRect:(CGRect)rect;
 
+- (NSString *)svgTextWithImageBase64Data:(NSString *)base64Data;
+
 @end
