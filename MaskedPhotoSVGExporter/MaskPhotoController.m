@@ -9,6 +9,8 @@
 #import "MaskPhotoController.h"
 #import "MaskOverlayView.h"
 #import "CircularCroppingMask.h"
+#import "UIImage+Resize.h"
+#import "ViewResultController.h"
 
 @interface MaskPhotoController () <UIScrollViewDelegate>
 
@@ -18,12 +20,18 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet MaskOverlayView *maskOverlayView;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cImageViewWidthConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cImageViewHeightConstraint;
+
 @end
 
 @implementation MaskPhotoController
 
 - (instancetype)initWithImage:(UIImage *)image {
     if (self = [super init]) {
+        UIImage *imageWithDefaultOrientation = [UIImage imageWithCGImage:[image CGImage]
+                                                                   scale:[image scale]
+                                                             orientation: UIImageOrientationUp];
         _image = image;
     }
     
@@ -32,27 +40,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self setupNavigationItem];
     [self setupImageInScrollView];
     [self setupMaskOverlay];
 }
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    
-    CGFloat minimumZoomScale = 1;
-    if (self.image.size.width < self.image.size.height) {
-        minimumZoomScale = self.scrollView.bounds.size.width / self.image.size.width;
-    } else {
-        minimumZoomScale = self.scrollView.bounds.size.height / self.image.size.height;
-    }
-    
-    if (self.scrollView.minimumZoomScale != minimumZoomScale) {
-        self.scrollView.minimumZoomScale = minimumZoomScale;
-        self.scrollView.zoomScale = minimumZoomScale;
-        [self centerImageInScrollView];
-    }
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
     
     CGRect croppingRect = [self.maskOverlayView.croppingMask croppingPathRectForRect:self.view.bounds];
+    
     UIEdgeInsets scrollViewInsets = UIEdgeInsetsZero;
     scrollViewInsets.top = croppingRect.origin.y;
     scrollViewInsets.left = croppingRect.origin.x;
@@ -60,6 +58,19 @@
     scrollViewInsets.bottom = self.view.bounds.size.height - CGRectGetMaxY(croppingRect);
     if (!UIEdgeInsetsEqualToEdgeInsets(self.scrollView.contentInset, scrollViewInsets)) {
         self.scrollView.contentInset = scrollViewInsets;
+    }
+    
+    CGFloat minimumZoomScale = 1;
+    if (self.imageView.bounds.size.width < self.imageView.bounds.size.height) {
+        minimumZoomScale = croppingRect.size.width / self.imageView.bounds.size.width;
+    } else {
+        minimumZoomScale = croppingRect.size.height / self.imageView.bounds.size.height;
+    }
+    
+    if (self.scrollView.minimumZoomScale != minimumZoomScale) {
+        self.scrollView.minimumZoomScale = minimumZoomScale;
+        self.scrollView.zoomScale = minimumZoomScale;
+        [self centerImageInScrollView];
     }
 }
 
@@ -69,15 +80,72 @@
     return self.imageView;
 }
 
+#pragma mark Actions
+
+- (void)submitButtonTap {
+    CGRect visibleRect = [self imageRectCurrentlyVisibleInMask];
+    
+    UIImage *properlyOrientedImage = [self.image resizedImage:self.image.size
+                                         interpolationQuality:kCGInterpolationDefault];
+    UIImage *croppedImage = [properlyOrientedImage croppedImage:visibleRect];
+    
+    ViewResultController *resultVC = [[ViewResultController alloc] initWithImage:croppedImage
+                                                                    croppingMask:self.maskOverlayView.croppingMask];
+    [self.navigationController pushViewController:resultVC animated:YES];
+}
+
 #pragma mark Views Support
+
+- (void)setupNavigationItem {
+    self.title = NSLocalizedString(@"Pan & Zoom", @"mask screen");
+    
+    NSString *buttonTitle = NSLocalizedString(@"Submit", @"mask screen");
+    UIBarButtonItem *submitButton = [[UIBarButtonItem alloc] initWithTitle:buttonTitle
+                                                                     style:UIBarButtonItemStyleDone
+                                                                    target:self
+                                                                    action:@selector(submitButtonTap)];
+    self.navigationItem.rightBarButtonItem = submitButton;
+}
 
 - (void)setupImageInScrollView {
     self.imageView.image = self.image;
     self.scrollView.maximumZoomScale = 1;
+    
+    [self scaleImageViewToFillCropingMask:self.maskOverlayView.croppingMask];
 }
 
 - (void)setupMaskOverlay {
-    self.maskOverlayView.croppingMask = [CircularCroppingMask new];
+    id<CroppingMask> mask = [CircularCroppingMask new];
+    self.maskOverlayView.croppingMask = mask;
+    
+    [self scaleImageViewToFillCropingMask:mask];
+}
+
+- (void)scaleImageViewToFillCropingMask:(id<CroppingMask>)croppingMask {
+    const CGSize imageSize = self.imageView.image.size;
+    
+    void (^scaleImageViewWithCoefficient)(CGFloat) = ^(CGFloat coefficient) {
+        self.cImageViewWidthConstraint.constant = imageSize.width * coefficient;
+        self.cImageViewHeightConstraint.constant = imageSize.height * coefficient;
+        [self.view layoutIfNeeded];
+    };
+    
+    if (!croppingMask) {
+        scaleImageViewWithCoefficient(1);
+        return;
+    }
+    
+    const CGSize maskSize = [croppingMask croppingPathRectForRect:self.scrollView.bounds].size;
+    
+    CGFloat resultingCoefficient = 1;
+    
+    CGFloat widthCoefficient = maskSize.width / imageSize.width;
+    CGFloat heightCoefficient = maskSize.height / imageSize.height;
+    if (widthCoefficient > 1 || heightCoefficient > 1) {
+        resultingCoefficient = MAX(widthCoefficient, heightCoefficient);
+    }
+    
+    scaleImageViewWithCoefficient(resultingCoefficient);
 }
 
 - (void)centerImageInScrollView {
@@ -85,6 +153,23 @@
     offset.x = (self.scrollView.contentSize.width - self.scrollView.bounds.size.width) / 2;
     offset.y = (self.scrollView.contentSize.height - self.scrollView.bounds.size.height) / 2;
     [self.scrollView setContentOffset:offset];
+}
+
+- (CGRect)imageRectCurrentlyVisibleInMask {
+    CGRect maskRect = [self.maskOverlayView.croppingMask croppingPathRectForRect:self.scrollView.bounds];
+    
+    CGRect visibleRect = CGRectZero;
+    visibleRect.origin.x = self.scrollView.contentOffset.x + maskRect.origin.x;
+    visibleRect.origin.y = self.scrollView.contentOffset.y + maskRect.origin.y;
+    visibleRect.size = maskRect.size;
+    
+    CGFloat scaling = 1.0 / self.scrollView.zoomScale;
+    visibleRect.origin.x *= scaling;
+    visibleRect.origin.y *= scaling;
+    visibleRect.size.width *= scaling;
+    visibleRect.size.height *= scaling;
+    
+    return visibleRect;
 }
 
 @end
