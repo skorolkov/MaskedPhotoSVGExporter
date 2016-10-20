@@ -18,6 +18,7 @@
 		F255B26C1DB7BC6D0056ED34 /* MaskPhotoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F255B26A1DB7BC6D0056ED34 /* MaskPhotoController.xib */; };
 		F255B2711DB7D1730056ED34 /* MaskOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B2701DB7D1730056ED34 /* MaskOverlayView.m */; };
 		F255B2761DB7D25E0056ED34 /* CircularCroppingMask.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B2751DB7D25E0056ED34 /* CircularCroppingMask.m */; };
+		F255B27C1DB8DA000056ED34 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B27B1DB8DA000056ED34 /* UIImage+Resize.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		F255B2731DB7D1B90056ED34 /* CroppingMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CroppingMask.h; sourceTree = "<group>"; };
 		F255B2741DB7D25E0056ED34 /* CircularCroppingMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularCroppingMask.h; sourceTree = "<group>"; };
 		F255B2751DB7D25E0056ED34 /* CircularCroppingMask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularCroppingMask.m; sourceTree = "<group>"; };
+		F255B27A1DB8DA000056ED34 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		F255B27B1DB8DA000056ED34 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,7 @@
 				F255B25E1DB795890056ED34 /* Controllers */,
 				F255B2601DB795AD0056ED34 /* Resources */,
 				F255B2391DB794720056ED34 /* Supporting Files */,
+				F255B2781DB8D9B90056ED34 /* Third Party */,
 			);
 			path = MaskedPhotoSVGExporter;
 			sourceTree = "<group>";
@@ -201,6 +205,23 @@
 				F255B2751DB7D25E0056ED34 /* CircularCroppingMask.m */,
 			);
 			name = Circular;
+			sourceTree = "<group>";
+		};
+		F255B2781DB8D9B90056ED34 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				F255B2791DB8D9DA0056ED34 /* UIImage+Resize */,
+			);
+			name = "Third Party";
+			sourceTree = "<group>";
+		};
+		F255B2791DB8D9DA0056ED34 /* UIImage+Resize */ = {
+			isa = PBXGroup;
+			children = (
+				F255B27A1DB8DA000056ED34 /* UIImage+Resize.h */,
+				F255B27B1DB8DA000056ED34 /* UIImage+Resize.m */,
+			);
+			name = "UIImage+Resize";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +331,7 @@
 				F255B23B1DB794720056ED34 /* main.m in Sources */,
 				F255B2761DB7D25E0056ED34 /* CircularCroppingMask.m in Sources */,
 				F255B2711DB7D1730056ED34 /* MaskOverlayView.m in Sources */,
+				F255B27C1DB8DA000056ED34 /* UIImage+Resize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +514,7 @@
 				F255B25A1DB794720056ED34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F255B25B1DB794720056ED34 /* Build configuration list for PBXNativeTarget "MaskedPhotoSVGExporterTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +523,7 @@
 				F255B25D1DB794720056ED34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
