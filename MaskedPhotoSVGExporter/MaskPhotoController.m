@@ -32,6 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupNavigationItem];
     [self setupImageInScrollView];
     [self setupMaskOverlay];
 }
@@ -69,7 +70,24 @@
     return self.imageView;
 }
 
+#pragma mark Actions
+
+- (void)submitButtonTap {
+    
+}
+
 #pragma mark Views Support
+
+- (void)setupNavigationItem {
+    self.title = NSLocalizedString(@"Pan & Zoom", @"mask screen");
+    
+    NSString *buttonTitle = NSLocalizedString(@"Submit", @"mask screen");
+    UIBarButtonItem *submitButton = [[UIBarButtonItem alloc] initWithTitle:buttonTitle
+                                                                     style:UIBarButtonItemStyleDone
+                                                                    target:self
+                                                                    action:@selector(submitButtonTap)];
+    self.navigationItem.rightBarButtonItem = submitButton;
+}
 
 - (void)setupImageInScrollView {
     self.imageView.image = self.image;
