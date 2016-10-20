@@ -21,6 +21,7 @@
 		F255B27C1DB8DA000056ED34 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B27B1DB8DA000056ED34 /* UIImage+Resize.m */; };
 		F255B2811DB8E0070056ED34 /* ViewResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B27F1DB8E0070056ED34 /* ViewResultController.m */; };
 		F255B2821DB8E0070056ED34 /* ViewResultController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F255B2801DB8E0070056ED34 /* ViewResultController.xib */; };
+		F255B28A1DB8EF5E0056ED34 /* ImageBase64Serializer.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B2891DB8EF5E0056ED34 /* ImageBase64Serializer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		F255B27E1DB8E0070056ED34 /* ViewResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewResultController.h; sourceTree = "<group>"; };
 		F255B27F1DB8E0070056ED34 /* ViewResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewResultController.m; sourceTree = "<group>"; };
 		F255B2801DB8E0070056ED34 /* ViewResultController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewResultController.xib; sourceTree = "<group>"; };
+		F255B2881DB8EF5E0056ED34 /* ImageBase64Serializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageBase64Serializer.h; sourceTree = "<group>"; };
+		F255B2891DB8EF5E0056ED34 /* ImageBase64Serializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageBase64Serializer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,7 @@
 		F255B25F1DB795900056ED34 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F255B2871DB8EEFF0056ED34 /* ImageBase64Serializer */,
 				F255B2721DB7D1820056ED34 /* CroppingMask */,
 			);
 			name = Classes;
@@ -238,6 +242,15 @@
 				F255B2801DB8E0070056ED34 /* ViewResultController.xib */,
 			);
 			name = ViewResultController;
+			sourceTree = "<group>";
+		};
+		F255B2871DB8EEFF0056ED34 /* ImageBase64Serializer */ = {
+			isa = PBXGroup;
+			children = (
+				F255B2881DB8EF5E0056ED34 /* ImageBase64Serializer.h */,
+				F255B2891DB8EF5E0056ED34 /* ImageBase64Serializer.m */,
+			);
+			name = ImageBase64Serializer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +363,7 @@
 				F255B2711DB7D1730056ED34 /* MaskOverlayView.m in Sources */,
 				F255B27C1DB8DA000056ED34 /* UIImage+Resize.m in Sources */,
 				F255B2811DB8E0070056ED34 /* ViewResultController.m in Sources */,
+				F255B28A1DB8EF5E0056ED34 /* ImageBase64Serializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
