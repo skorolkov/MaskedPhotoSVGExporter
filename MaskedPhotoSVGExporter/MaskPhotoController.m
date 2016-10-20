@@ -9,6 +9,8 @@
 #import "MaskPhotoController.h"
 #import "MaskOverlayView.h"
 #import "CircularCroppingMask.h"
+#import "UIImage+Resize.h"
+#import "ViewResultController.h"
 
 @interface MaskPhotoController () <UIScrollViewDelegate>
 
@@ -27,6 +29,9 @@
 
 - (instancetype)initWithImage:(UIImage *)image {
     if (self = [super init]) {
+        UIImage *imageWithDefaultOrientation = [UIImage imageWithCGImage:[image CGImage]
+                                                                   scale:[image scale]
+                                                             orientation: UIImageOrientationUp];
         _image = image;
     }
     
@@ -78,20 +83,15 @@
 #pragma mark Actions
 
 - (void)submitButtonTap {
-    CGRect maskRect = [self.maskOverlayView.croppingMask croppingPathRectForRect:self.scrollView.bounds];
+    CGRect visibleRect = [self imageRectCurrentlyVisibleInMask];
     
-    CGRect visibleRect = CGRectZero;
-    visibleRect.origin.x = self.scrollView.contentOffset.x + maskRect.origin.x;
-    visibleRect.origin.y = self.scrollView.contentOffset.y + maskRect.origin.y;
-    visibleRect.size = maskRect.size;
+    UIImage *properlyOrientedImage = [self.image resizedImage:self.image.size
+                                         interpolationQuality:kCGInterpolationDefault];
+    UIImage *croppedImage = [properlyOrientedImage croppedImage:visibleRect];
     
-    CGFloat scaling = 1.0 / self.scrollView.zoomScale;
-    visibleRect.origin.x *= scaling;
-    visibleRect.origin.y *= scaling;
-    visibleRect.size.width *= scaling;
-    visibleRect.size.height *= scaling;
-    
-    NSLog(@"%@", NSStringFromCGRect(visibleRect));
+    ViewResultController *resultVC = [[ViewResultController alloc] initWithImage:croppedImage
+                                                                    croppingMask:self.maskOverlayView.croppingMask];
+    [self.navigationController pushViewController:resultVC animated:YES];
 }
 
 #pragma mark Views Support
@@ -153,6 +153,23 @@
     offset.x = (self.scrollView.contentSize.width - self.scrollView.bounds.size.width) / 2;
     offset.y = (self.scrollView.contentSize.height - self.scrollView.bounds.size.height) / 2;
     [self.scrollView setContentOffset:offset];
+}
+
+- (CGRect)imageRectCurrentlyVisibleInMask {
+    CGRect maskRect = [self.maskOverlayView.croppingMask croppingPathRectForRect:self.scrollView.bounds];
+    
+    CGRect visibleRect = CGRectZero;
+    visibleRect.origin.x = self.scrollView.contentOffset.x + maskRect.origin.x;
+    visibleRect.origin.y = self.scrollView.contentOffset.y + maskRect.origin.y;
+    visibleRect.size = maskRect.size;
+    
+    CGFloat scaling = 1.0 / self.scrollView.zoomScale;
+    visibleRect.origin.x *= scaling;
+    visibleRect.origin.y *= scaling;
+    visibleRect.size.width *= scaling;
+    visibleRect.size.height *= scaling;
+    
+    return visibleRect;
 }
 
 @end

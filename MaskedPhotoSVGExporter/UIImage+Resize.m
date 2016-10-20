@@ -14,7 +14,7 @@
     CGFloat scale = MAX(self.scale, 1.0f);
     CGRect scaledBounds = CGRectMake(bounds.origin.x * scale, bounds.origin.y * scale, bounds.size.width * scale, bounds.size.height * scale);
     CGImageRef imageRef = CGImageCreateWithImageInRect([self CGImage], scaledBounds);
-    UIImage *croppedImage = [UIImage imageWithCGImage:imageRef scale:self.scale orientation:self.imageOrientation];
+    UIImage *croppedImage = [UIImage imageWithCGImage:imageRef scale:self.scale orientation:UIImageOrientationUp];
     CGImageRelease(imageRef);
     return croppedImage;
 }

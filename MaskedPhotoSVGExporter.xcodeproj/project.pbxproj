@@ -19,6 +19,8 @@
 		F255B2711DB7D1730056ED34 /* MaskOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B2701DB7D1730056ED34 /* MaskOverlayView.m */; };
 		F255B2761DB7D25E0056ED34 /* CircularCroppingMask.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B2751DB7D25E0056ED34 /* CircularCroppingMask.m */; };
 		F255B27C1DB8DA000056ED34 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B27B1DB8DA000056ED34 /* UIImage+Resize.m */; };
+		F255B2811DB8E0070056ED34 /* ViewResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = F255B27F1DB8E0070056ED34 /* ViewResultController.m */; };
+		F255B2821DB8E0070056ED34 /* ViewResultController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F255B2801DB8E0070056ED34 /* ViewResultController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,9 @@
 		F255B2751DB7D25E0056ED34 /* CircularCroppingMask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularCroppingMask.m; sourceTree = "<group>"; };
 		F255B27A1DB8DA000056ED34 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		F255B27B1DB8DA000056ED34 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		F255B27E1DB8E0070056ED34 /* ViewResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewResultController.h; sourceTree = "<group>"; };
+		F255B27F1DB8E0070056ED34 /* ViewResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewResultController.m; sourceTree = "<group>"; };
+		F255B2801DB8E0070056ED34 /* ViewResultController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewResultController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +134,7 @@
 		F255B25E1DB795890056ED34 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F255B27D1DB8DFEF0056ED34 /* ViewResultController */,
 				F255B2671DB7BC520056ED34 /* MaskPhotoController */,
 				F255B2611DB79DF30056ED34 /* StartController */,
 			);
@@ -224,6 +230,16 @@
 			name = "UIImage+Resize";
 			sourceTree = "<group>";
 		};
+		F255B27D1DB8DFEF0056ED34 /* ViewResultController */ = {
+			isa = PBXGroup;
+			children = (
+				F255B27E1DB8E0070056ED34 /* ViewResultController.h */,
+				F255B27F1DB8E0070056ED34 /* ViewResultController.m */,
+				F255B2801DB8E0070056ED34 /* ViewResultController.xib */,
+			);
+			name = ViewResultController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -307,6 +323,7 @@
 				F255B2491DB794720056ED34 /* LaunchScreen.storyboard in Resources */,
 				F255B2461DB794720056ED34 /* Assets.xcassets in Resources */,
 				F255B26C1DB7BC6D0056ED34 /* MaskPhotoController.xib in Resources */,
+				F255B2821DB8E0070056ED34 /* ViewResultController.xib in Resources */,
 				F255B2661DB79E1C0056ED34 /* StartController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +349,7 @@
 				F255B2761DB7D25E0056ED34 /* CircularCroppingMask.m in Sources */,
 				F255B2711DB7D1730056ED34 /* MaskOverlayView.m in Sources */,
 				F255B27C1DB8DA000056ED34 /* UIImage+Resize.m in Sources */,
+				F255B2811DB8E0070056ED34 /* ViewResultController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
