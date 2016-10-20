@@ -29,9 +29,6 @@
 
 - (instancetype)initWithImage:(UIImage *)image {
     if (self = [super init]) {
-        UIImage *imageWithDefaultOrientation = [UIImage imageWithCGImage:[image CGImage]
-                                                                   scale:[image scale]
-                                                             orientation: UIImageOrientationUp];
         _image = image;
     }
     

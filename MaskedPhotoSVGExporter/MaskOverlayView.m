@@ -33,7 +33,6 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextClearRect(context, self.bounds);
     
-    // Create a path around the entire view
     UIBezierPath *clipPath = [UIBezierPath bezierPathWithRect:self.bounds];
     
     UIColor *tintColor = [UIColor blackColor];
