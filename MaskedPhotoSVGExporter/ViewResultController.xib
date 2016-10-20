@@ -6,8 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewResultController">
             <connections>
-                <outlet property="imageView" destination="u6p-om-IEl" id="Gvd-xH-qpx"/>
+                <outlet property="imageView" destination="7CF-xt-b1W" id="nGq-xP-wr5"/>
+                <outlet property="svgTextView" destination="mcR-kG-2Er" id="1na-nH-qt7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webViewContainer" destination="5RE-Ue-trt" id="m3F-Jc-AsX"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -15,16 +17,60 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u6p-om-IEl">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                </imageView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" verticalCompressionResistancePriority="755" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Yqq-m4-iSs">
+                    <rect key="frame" x="194" y="8" width="212" height="29"/>
+                    <segments>
+                        <segment title="SVG Text"/>
+                        <segment title="WebView"/>
+                        <segment title="Image"/>
+                    </segments>
+                    <connections>
+                        <action selector="resultTypeSegmentedControlChanged:" destination="-1" eventType="valueChanged" id="iFI-mm-lev"/>
+                    </connections>
+                </segmentedControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="240-wo-RTU" userLabel="Content View">
+                    <rect key="frame" x="8" y="44" width="584" height="556"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcR-kG-2Er">
+                            <rect key="frame" x="0.0" y="0.0" width="584" height="556"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5RE-Ue-trt" userLabel="Web View Container">
+                            <rect key="frame" x="0.0" y="0.0" width="584" height="556"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7CF-xt-b1W">
+                            <rect key="frame" x="0.0" y="0.0" width="584" height="556"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="5RE-Ue-trt" secondAttribute="trailing" id="3Nv-T4-4Xn"/>
+                        <constraint firstItem="mcR-kG-2Er" firstAttribute="leading" secondItem="240-wo-RTU" secondAttribute="leading" id="9Xr-F8-Y0z"/>
+                        <constraint firstAttribute="trailing" secondItem="mcR-kG-2Er" secondAttribute="trailing" id="Dgb-tc-O8I"/>
+                        <constraint firstItem="mcR-kG-2Er" firstAttribute="top" secondItem="240-wo-RTU" secondAttribute="top" id="HQa-RD-mx0"/>
+                        <constraint firstItem="5RE-Ue-trt" firstAttribute="top" secondItem="240-wo-RTU" secondAttribute="top" id="LM1-NI-z0t"/>
+                        <constraint firstItem="5RE-Ue-trt" firstAttribute="leading" secondItem="240-wo-RTU" secondAttribute="leading" id="M2k-FY-OMd"/>
+                        <constraint firstAttribute="bottom" secondItem="7CF-xt-b1W" secondAttribute="bottom" id="iYr-bo-Qcj"/>
+                        <constraint firstAttribute="trailing" secondItem="7CF-xt-b1W" secondAttribute="trailing" id="ibk-ec-R7l"/>
+                        <constraint firstAttribute="bottom" secondItem="mcR-kG-2Er" secondAttribute="bottom" id="ok2-zD-bTh"/>
+                        <constraint firstAttribute="bottom" secondItem="5RE-Ue-trt" secondAttribute="bottom" id="qmK-OW-kXi"/>
+                        <constraint firstItem="7CF-xt-b1W" firstAttribute="top" secondItem="240-wo-RTU" secondAttribute="top" id="s2G-bV-bFL"/>
+                        <constraint firstItem="7CF-xt-b1W" firstAttribute="leading" secondItem="240-wo-RTU" secondAttribute="leading" id="zpw-VO-xmS"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="u6p-om-IEl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7p0-Gm-syL"/>
-                <constraint firstAttribute="trailing" secondItem="u6p-om-IEl" secondAttribute="trailing" id="SdS-aE-cuA"/>
-                <constraint firstItem="u6p-om-IEl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gjK-6K-Cea"/>
-                <constraint firstAttribute="bottom" secondItem="u6p-om-IEl" secondAttribute="bottom" id="zSU-H0-B28"/>
+                <constraint firstItem="Yqq-m4-iSs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="26d-gi-DK1"/>
+                <constraint firstItem="240-wo-RTU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="AAH-f8-SNT"/>
+                <constraint firstItem="Yqq-m4-iSs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JPQ-iV-tSK"/>
+                <constraint firstAttribute="bottom" secondItem="240-wo-RTU" secondAttribute="bottom" id="Mas-PX-ACc"/>
+                <constraint firstItem="240-wo-RTU" firstAttribute="top" secondItem="Yqq-m4-iSs" secondAttribute="bottom" constant="8" id="ev2-xd-ate"/>
+                <constraint firstAttribute="trailing" secondItem="240-wo-RTU" secondAttribute="trailing" constant="8" id="xbs-Ia-A6E"/>
             </constraints>
         </view>
     </objects>
