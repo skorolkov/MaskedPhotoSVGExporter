@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MaskPhotoController">
             <connections>
+                <outlet property="cImageViewHeightConstraint" destination="efD-vC-md9" id="2bt-y6-K3D"/>
+                <outlet property="cImageViewWidthConstraint" destination="OKd-0G-vI0" id="d1G-2a-Ra3"/>
                 <outlet property="imageView" destination="YrN-9y-B5j" id="Q4S-Mv-hDw"/>
                 <outlet property="maskOverlayView" destination="ZjX-MV-ON5" id="i4i-j1-u7B"/>
                 <outlet property="scrollView" destination="BIs-ex-e1x" id="lMJ-Os-s8J"/>
@@ -22,6 +24,10 @@
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="600" translatesAutoresizingMaskIntoConstraints="NO" id="YrN-9y-B5j">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="600" id="OKd-0G-vI0"/>
+                                <constraint firstAttribute="height" constant="600" id="efD-vC-md9"/>
+                            </constraints>
                         </imageView>
                     </subviews>
                     <constraints>
